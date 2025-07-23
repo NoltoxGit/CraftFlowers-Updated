@@ -1,11 +1,11 @@
 plugins {
     java
-    id("com.github.johnrengelman.shadow") version "8.1.1"
-    id("xyz.jpenilla.run-paper") version "2.1.0"
+    id("com.gradleup.shadow") version "9.0.0-rc1"
+    id("xyz.jpenilla.run-paper") version "2.3.1"
 }
 
 group = "at.toastiii.craftflowers"
-version = "1.2.5"
+version = "1.2.6-SNAPSHOT-v1"
 
 repositories {
     mavenCentral()
@@ -16,9 +16,9 @@ repositories {
 }
 
 dependencies {
-    compileOnly("org.spigotmc:spigot-api:1.21.4-R0.1-SNAPSHOT")
-    compileOnly("com.mojang:authlib:1.6.25")
-    compileOnly("com.fastasyncworldedit:FastAsyncWorldEdit-Bukkit:2.7.0")
+    compileOnly("org.spigotmc:spigot-api:1.21.8-R0.1-SNAPSHOT")
+    compileOnly("com.mojang:authlib:3.11.50")
+    compileOnly("com.fastasyncworldedit:FastAsyncWorldEdit-Bukkit:2.13.0")
     implementation("fr.minuskube.inv:smart-invs:1.2.7") {
         isTransitive = false
     }
@@ -39,7 +39,7 @@ tasks {
     }
     compileJava {
         options.encoding = Charsets.UTF_8.name()
-        options.release.set(17)
+        options.release.set(21)
     }
     javadoc {
         options.encoding = Charsets.UTF_8.name()
@@ -51,6 +51,6 @@ tasks {
 
 tasks {
     runServer {
-        minecraftVersion("1.21.4")
+        minecraftVersion("1.21.8")
     }
 }
